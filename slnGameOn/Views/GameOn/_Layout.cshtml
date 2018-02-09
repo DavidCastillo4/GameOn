@@ -1,0 +1,55 @@
+﻿
+@{
+	Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width" />
+	<title>@ViewBag.Title</title>
+		<link href="~/Css/css.css" rel="stylesheet" />
+		<link href="~/Css/Layout.css" rel="stylesheet" />
+</head>
+<body style="margin: 0px; width: 100%; background-color: #E2E4DC;">
+	@using (Html.BeginForm())
+	{
+
+		<table style="width: 100%; margin: 0px; background-color: #D6D7D1; top: 0px;left: 0px; position: fixed; z-index: 99;" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td class="bg1" rowspan="2" style="padding: 10px 60px 10px 10px; width: 20px;">
+					<table style="margin: 0px;" cellpadding="0" cellspacing="0">
+						<tr>
+							<td class="bg1 Game"><div class="Game2">Game</div></td>
+							<td class="bg1 On"><div class="On2">On</div></td>
+						</tr>
+					</table>
+				</td>
+				<td colspan="8" class="bg1">&nbsp;</td>
+			</tr>
+			<tr>
+				<td class="NavTD" id="tdBrowse"><a class="NavTD" href="Browse" id="Browse">Browse</a></td>
+				<td class="bg1" width="30px">&nbsp;</td>
+				<td class="NavTD" id="tdCart"><a class="NavTD" href="Cart" id="Cart">Cart</a></td>
+				<td class="bg1">&nbsp;</td>
+				<td class="NavTD" id="tdOrderHistory"><a class="NavTD" href="OrderHistory" id="Cart">Order History</a></td>
+				<td class="bg1" width="30px">&nbsp;</td>
+				<td class="NavTD" id="tdAccount"><a class="NavTD" href="Account" id="Account">Account Info</a></td>
+				<td class="bg1" width="20px">&nbsp;</td>
+			</tr>
+		</table>
+		<div>
+			@RenderBody()
+		</div>
+	}
+	
+	
+	<script src="~/Scripts/jquery-1.12.4.min.js"></script>
+
+	<script type="text/javascript">
+			$(document).ready(function () {
+			});
+	</script>
+
+</body>
+</html>
+

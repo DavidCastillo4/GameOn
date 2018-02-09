@@ -1,0 +1,63 @@
+﻿
+.bg1 {
+	background-color: #D6D7D1
+}
+
+
+.Margin {
+	width: 170px;
+}
+
+.TitleLeft {
+	background-color: #7A8699;
+	color: white;
+	font-family: Verdana;
+	text-align: left;
+	font-weight: 500;
+	font-size: 13pt;
+	padding-left: 20px;
+	height: 25px;
+	min-width: 200px;
+	width: 200px;
+	max-width: 200px;
+}
+
+.TitleRight {
+	background-color: #7A8699;
+	color: white;
+	font-family: Verdana;
+	text-align: right;
+	min-width: 700px;
+	width: 700px;
+	max-width: 700px;
+}
+
+.Label {
+	font-family: Verdana;
+	text-align: right;
+	background-color: #EDE9E9;
+	height: 35px;
+	padding-right: 10px;
+	font-size: 13pt;
+	color: #56657D;
+}
+
+.Data {
+	font-family: Verdana;
+	text-align: left;
+	background-color: #EDE9E9;
+	padding-left: 10px;
+	font-size: 13pt;
+	color: #56657D;
+}
+
+.Input {
+	font-family: Verdana;
+	background-color: #F3F0F0;
+	text-align: left;
+	font-size: 13pt;
+	color: #56657D;
+	padding-left: 5px;
+	border-radius: 4px;
+	width: 97%;
+}

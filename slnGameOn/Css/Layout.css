@@ -1,0 +1,55 @@
+﻿.Game {
+	color: limegreen;
+	padding-left: 5px;
+	width: 10px;
+}
+
+.On {
+	color: white;
+	width: 10px;
+}
+
+.Game, .On {
+	line-height: 50px;
+	font-family: Calibri;
+	font-size: 40pt;
+	font-style: normal;
+	font-weight: 900;
+}
+
+.Game2 {
+	border-radius: 10px 0px 0px 10px;
+	background-color: white;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+.On2 {
+	border-radius: 0px 20px 20px 0px;
+	background-color: limegreen;
+	padding-left: 5px;
+	padding-right: 12px;
+}
+
+
+.NavTab {
+	border-style: solid solid none solid;
+	border-width: 1px 1px 0px 1px;
+	border-radius: 11px 11px 0px 0px;
+	background-color: #E2E4DC;
+	border-color: #E2E4DC;
+	text-align: center;
+}
+
+.NavTD {
+	font-weight: 500;
+	color: black;
+	font-size: 12pt;
+	text-align: center;
+	padding: 0px 0px 0px 0px;
+	text-decoration: none;
+	font-family: Verdana;
+	width: 150px;
+	white-space: nowrap;
+	overflow: hidden;
+}
