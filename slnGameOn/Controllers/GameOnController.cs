@@ -20,7 +20,7 @@ namespace slnGameOn.Controllers
             var Qry = "spGetAccountInfo @CustomerId=" + CustomerId;
             var ds = repository.ReturnDataSet(Qry);
             DataTable dt = ds.Tables[0], dt2 = ds.Tables[1];
-            var oc = new mCustomer(CustomerId);
+            var oc = new Customer(CustomerId);
             oc.FirstName = ds.Tables[0].Rows[0]["FirstName"].ToString();
             oc.LastName = ds.Tables[0].Rows[0]["LastName"].ToString();
             oc.Gender = ds.Tables[0].Rows[0]["Gender"].ToString();
@@ -33,12 +33,12 @@ namespace slnGameOn.Controllers
             oc.CityStateZip = ds.Tables[0].Rows[0]["CityStateZip"].ToString();
             oc.PassWord = ds.Tables[0].Rows[0]["PassWord"].ToString();
             foreach (DataRow r in dt2.Rows)
-                oc.Phone.Add(new mPhone
+                oc.Phone.Add(new Phone
                              {
                                  PhoneId = Convert.ToInt32(r["PhoneId"]),
                                  TypeId = Convert.ToInt32(r["PhoneTypeId"]),
                                  Type = r["PhoneType"].ToString(),
-                                 Phone = r["Phone"].ToString()
+                                 PhoneNumber = r["Phone"].ToString()
                              });
             ds.Clear();
             return View(oc);
@@ -48,7 +48,7 @@ namespace slnGameOn.Controllers
         public ActionResult Account(string btSubmit)
         {
             var Ctr = "";
-            var ModelCust = new mCustomer(6);
+            var ModelCust = new Customer(6);
             return View("Account", ModelCust);
         }
 
@@ -60,7 +60,7 @@ namespace slnGameOn.Controllers
         [HttpPost]
         public ActionResult Browse(string btSubmit)
         {
-            var ModelCust = new mCustomer(6);
+            var ModelCust = new Customer(6);
             return View("Cart", ModelCust);
         }
 

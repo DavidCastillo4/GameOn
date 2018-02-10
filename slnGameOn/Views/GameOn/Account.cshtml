@@ -1,4 +1,4 @@
-﻿@model slnGameOn.Models.mCustomer
+﻿@model slnGameOn.Models.Customer
 @{
 	ViewBag.Title = "Account";
 	Layout = "~/Views/GameOn/_Layout.cshtml";
@@ -81,7 +81,7 @@
 		<tr>
 			<td colspan="2"></td>
 			<td class="Label">@Model.Phone[i].Type</td>
-			<td class="Data"><input id="@Model.Phone[i].PhoneId" class="Input" type="text" value='@Model.Phone[i].Phone' /> </td>
+			<td class="Data"><input id="@Model.Phone[i].PhoneId" class="Input" type="text" value='@Model.Phone[i].PhoneNumber' /> </td>
 			<td colspan="2"></td>
 		</tr>
 	}
