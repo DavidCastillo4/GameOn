@@ -13,21 +13,10 @@ namespace slnGameOn.Mapper
     {
         public Customer Map(DataSet data)
         {
-            var customerData = data.Tables[0];
+            var customerDataRow = data.Tables[0].Rows[0];
             var phoneData = data.Tables[1];
+            var customer = CreateCustomer(customerDataRow);
 
-            var customer = new Customer();
-            customer.FirstName = customerData.Rows[0]["FirstName"].ToString();
-            customer.LastName = customerData.Rows[0]["LastName"].ToString();
-            customer.Gender = customerData.Rows[0]["Gender"].ToString();
-            customer.DOB = customerData.Rows[0]["DOB"].ToString();
-            customer.MaritalStatus = customerData.Rows[0]["MaritalStatus"].ToString();
-            customer.EmailId = customerData.Rows[0]["EmailId"].ToString();
-            customer.Email = customerData.Rows[0]["Email"].ToString();
-            customer.AddressId = customerData.Rows[0]["AddressId"].ToString();
-            customer.Address = customerData.Rows[0]["Address"].ToString();
-            customer.CityStateZip = customerData.Rows[0]["CityStateZip"].ToString();
-            customer.PassWord = customerData.Rows[0]["PassWord"].ToString();
             foreach (DataRow phoneRow in phoneData.Rows)
                 customer.Phone.Add(new Phone
                                    {
@@ -36,6 +25,25 @@ namespace slnGameOn.Mapper
                                        Type = phoneRow["PhoneType"].ToString(),
                                        PhoneNumber = phoneRow["Phone"].ToString()
                                    });
+            return customer;
+        }
+
+        static Customer CreateCustomer(DataRow customerDataRow)
+        {
+            var customer = new Customer
+                           {
+                               FirstName = customerDataRow["FirstName"].ToString(),
+                               LastName = customerDataRow["LastName"].ToString(),
+                               Gender = customerDataRow["Gender"].ToString(),
+                               DOB = customerDataRow["DOB"].ToString(),
+                               MaritalStatus = customerDataRow["MaritalStatus"].ToString(),
+                               EmailId = customerDataRow["EmailId"].ToString(),
+                               Email = customerDataRow["Email"].ToString(),
+                               AddressId = customerDataRow["AddressId"].ToString(),
+                               Address = customerDataRow["Address"].ToString(),
+                               CityStateZip = customerDataRow["CityStateZip"].ToString(),
+                               PassWord = customerDataRow["PassWord"].ToString()
+                           };
             return customer;
         }
     }
