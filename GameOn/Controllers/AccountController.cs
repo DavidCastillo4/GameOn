@@ -3,6 +3,8 @@
 // 2018/02/10
 //  --------------------------------------------------------------------------------------
 
+using System.Collections.Generic;
+using System.Linq;
 using System.Web.Mvc;
 using GameOn.Database;
 using GameOn.Mapper;
@@ -13,7 +15,7 @@ namespace GameOn.Controllers
     public class AccountController : Controller
     {
         // GET: Account
-        public ActionResult Index(int id=0)
+        public ActionResult Index(int id = 0)
         {
             var repository = new Repository();
 
@@ -28,7 +30,7 @@ namespace GameOn.Controllers
 
             var mapper = new CustomerMapper();
             var customer = mapper.Map(ds);
-
+            CreateSelectLists();
             return View(customer);
         }
 
@@ -44,6 +46,25 @@ namespace GameOn.Controllers
             // The below line of code will send the user back to the form, displaying
             // the updated data.
             return View(customer);
+        }
+
+        static SelectList CreateGendersSelectList()
+        {
+            var values = new Dictionary<string, string> {{string.Empty, null}, {"M", "Married"}, {"S", "Single"}};
+            var selectListItems = values.Select(p => new SelectListItem {Text = p.Value, Value = p.Key});
+            return new SelectList(selectListItems);
+        }
+
+        static SelectList CreateMaritalStatusesSelectList()
+        {
+            var values = new[] {"S", "M"};
+            return new SelectList(values);
+        }
+
+        void CreateSelectLists()
+        {
+            ViewBag.Genders = CreateGendersSelectList();
+            ViewBag.MaritalStatuses = CreateMaritalStatusesSelectList();
         }
     }
 }

@@ -32,52 +32,48 @@
         </tr>
         <tr>
             <td colspan="2"></td>
-            <td class="Label">@Html.LabelFor(p=>p.DOB)</td>
-            <td class="Data">@Html.TextBoxFor(p=>p.DOB, new{@class="Input"})</td>
+            <td class="Label">@Html.LabelFor(p => p.DOB)</td>
+            <td class="Data">@Html.TextBoxFor(p => p.DOB, new {@class = "Input"})</td>
             <td colspan="2"></td>
         </tr>
         <tr>
             <td colspan="2"></td>
             <td class="Label">Gender</td>
             <td class="Data">
-                <select class="Input" id="Gender" style="width: 150px;">
-                    <option value="M">M</option><option value="F">F</option>
-                </select>
+                @Html.DropDownListFor(p => p.Gender, (SelectList) ViewBag.Genders)
             </td>
             <td colspan="2"></td>
         </tr>
         <tr>
             <td colspan="2"></td>
-            <td class="Label">@Html.LabelFor(p=>p.MaritalStatus)</td>
+            <td class="Label">@Html.LabelFor(p => p.MaritalStatus)</td>
             <td class="Data">
-                <select class="Input" id="MaritalStatus" style="width: 150px;">
-                    <option value="S">Single</option><option value="M">Married</option>
-                </select>
+                @Html.DropDownListFor(p => p.MaritalStatus, (SelectList) ViewBag.MaritalStatuses)
             </td>
             <td colspan="2"></td>
         </tr>
         <tr>
             <td colspan="2"></td>
-            <td class="Label">@Html.LabelFor(p=>p.Email)</td>
-            <td class="Data">@Html.TextBoxFor(p=>p.Email, new{@class="Input"})</td>
+            <td class="Label">@Html.LabelFor(p => p.Email)</td>
+            <td class="Data">@Html.TextBoxFor(p => p.Email, new {@class = "Input"})</td>
             <td colspan="2"></td>
         </tr>
         <tr>
             <td colspan="2"></td>
-            <td class="Label">@Html.LabelFor(p=>p.Address)</td>
-            <td class="Data">@Html.TextBoxFor(p=>p.Address, new{@class="Input"})</td>
+            <td class="Label">@Html.LabelFor(p => p.Address)</td>
+            <td class="Data">@Html.TextBoxFor(p => p.Address, new {@class = "Input"})</td>
             <td colspan="2"></td>
         </tr>
         <tr>
             <td colspan="2"></td>
             <td class="Label"></td>
-            <td class="Data">@Html.TextBoxFor(p=>p.CityStateZip, new{@class="Input"})</td>
+            <td class="Data">@Html.TextBoxFor(p => p.CityStateZip, new {@class = "Input"})</td>
             <td colspan="2"></td>
         </tr>
         <tr>
             <td colspan="2"></td>
-            <td class="Label">@Html.DisplayFor(p=>p.Password)</td>
-            <td class="Data">@Html.PasswordFor(p=>p.Password, new{@class="Input"})</td>
+            <td class="Label">@Html.DisplayFor(p => p.Password)</td>
+            <td class="Data">@Html.PasswordFor(p => p.Password, new {@class = "Input"})</td>
             <td colspan="2"></td>
         </tr>
         <tr>
@@ -93,8 +89,8 @@
         {
             <tr>
                 <td colspan="2"></td>
-                <td class="Label">@Html.LabelFor(p=>t.Type)</td>
-                <td class="Data">@Html.TextBoxFor(p=>t.PhoneNumber, new{@class="Input"})</td>
+                <td class="Label">@Html.LabelFor(p => t.Type)</td>
+                <td class="Data">@Html.TextBoxFor(p => t.PhoneNumber, new {@class = "Input"})</td>
                 <td colspan="2"></td>
             </tr>
         }
