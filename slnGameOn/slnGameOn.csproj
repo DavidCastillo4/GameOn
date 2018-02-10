@@ -138,8 +138,8 @@
     <Content Include="Content\vendor\themes\base\tabs.css" />
     <Content Include="Content\vendor\themes\base\theme.css" />
     <Content Include="Content\vendor\themes\base\tooltip.css" />
-    <Content Include="css\site.css" />
-    <Content Include="css\Layout.css" />
+    <Content Include="Content\site.css" />
+    <Content Include="Content\Layout.css" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\site.js" />
     <Content Include="Scripts\vendor\bootstrap.bundle.js" />
