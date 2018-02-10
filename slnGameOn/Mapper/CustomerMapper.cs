@@ -3,7 +3,6 @@
 // 2018/02/10
 //  --------------------------------------------------------------------------------------
 
-using System;
 using System.Data;
 using slnGameOn.Models;
 
@@ -17,14 +16,7 @@ namespace slnGameOn.Mapper
             var phoneData = data.Tables[1];
             var customer = CreateCustomer(customerDataRow);
 
-            foreach (DataRow phoneRow in phoneData.Rows)
-                customer.Phone.Add(new Phone
-                                   {
-                                       PhoneId = Convert.ToInt32(phoneRow["PhoneId"]),
-                                       TypeId = Convert.ToInt32(phoneRow["PhoneTypeId"]),
-                                       Type = phoneRow["PhoneType"].ToString(),
-                                       PhoneNumber = phoneRow["Phone"].ToString()
-                                   });
+            MapPhoneNumbers(phoneData, customer);
             return customer;
         }
 
@@ -45,6 +37,13 @@ namespace slnGameOn.Mapper
                                PassWord = customerDataRow["PassWord"].ToString()
                            };
             return customer;
+        }
+
+        static void MapPhoneNumbers(DataTable phoneData, Customer customer)
+        {
+            var phoneMapper = new PhoneMapper();
+            foreach (DataRow phoneRow in phoneData.Rows)
+                customer.Phone.Add(phoneMapper.Map(phoneRow));
         }
     }
 }
