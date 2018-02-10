@@ -15,10 +15,10 @@ namespace slnGameOn.Mapper
         {
             return new Phone
                    {
-                       PhoneId = Convert.ToInt32(phoneRow["PhoneId"]),
-                       TypeId = Convert.ToInt32(phoneRow["PhoneTypeId"]),
-                       Type = phoneRow["PhoneType"].ToString(),
-                       PhoneNumber = phoneRow["Phone"].ToString()
+                       PhoneId = Convert.ToInt32(FieldNames.Phone.Id),
+                       TypeId = Convert.ToInt32(FieldNames.Phone.PhoneTypeId),
+                       Type = phoneRow[FieldNames.Phone.PhoneType].ToString(),
+                       PhoneNumber = phoneRow[FieldNames.Phone.PhoneNumber].ToString()
                    };
         }
     }
