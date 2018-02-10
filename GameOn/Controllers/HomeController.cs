@@ -12,27 +12,7 @@ namespace GameOn.Controllers
 {
     public class HomeController : Controller
     {
-        public ActionResult Account()
-        {
-            var repository = new Repository();
-            var customerId = 4;
-            var query = "spGetAccountInfo @CustomerId=" + customerId;
-
-            var ds = repository.ReturnDataSet(query);
-
-            var mapper = new CustomerMapper();
-            var customer = mapper.Map(ds);
-            
-            return View(customer);
-        }
-
-        [HttpPost]
-        public ActionResult Account(string btSubmit)
-        {
-            var Ctr = "";
-            var ModelCust = new Customer(6);
-            return View("Account", ModelCust);
-        }
+        
 
         public ActionResult Index()
         {
