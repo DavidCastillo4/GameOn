@@ -138,7 +138,7 @@
     <Content Include="Content\themes\base\tabs.css" />
     <Content Include="Content\themes\base\theme.css" />
     <Content Include="Content\themes\base\tooltip.css" />
-    <Content Include="Css\css.css" />
+    <Content Include="Css\site.css" />
     <Content Include="Css\Layout.css" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\site.js" />
