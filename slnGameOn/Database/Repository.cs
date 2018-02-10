@@ -7,7 +7,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Web.Configuration;
 
-namespace slnGameOn.db
+namespace slnGameOn.Database
 {
     public class Repository
     {

@@ -6,7 +6,7 @@
 using System;
 using System.Data;
 using System.Web.Mvc;
-using slnGameOn.db;
+using slnGameOn.Database;
 using slnGameOn.Models;
 
 namespace slnGameOn.Controllers
