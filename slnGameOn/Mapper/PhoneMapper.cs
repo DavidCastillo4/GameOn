@@ -9,7 +9,7 @@ using slnGameOn.Models;
 
 namespace slnGameOn.Mapper
 {
-    public class PhoneMapper
+    public class PhoneMapper : MapperBase
     {
         public Phone Map(DataRow phoneRow)
         {
@@ -17,8 +17,8 @@ namespace slnGameOn.Mapper
                    {
                        PhoneId = Convert.ToInt32(FieldNames.Phone.Id),
                        TypeId = Convert.ToInt32(FieldNames.Phone.PhoneTypeId),
-                       Type = phoneRow[FieldNames.Phone.PhoneType].ToString(),
-                       PhoneNumber = phoneRow[FieldNames.Phone.PhoneNumber].ToString()
+                       Type = GetStringValue(phoneRow[FieldNames.Phone.PhoneType]),
+                       PhoneNumber = GetStringValue(phoneRow[FieldNames.Phone.PhoneNumber])
                    };
         }
     }
