@@ -141,7 +141,7 @@
     <Content Include="Css\css.css" />
     <Content Include="Css\Layout.css" />
     <Content Include="Global.asax" />
-    <Content Include="ScriptsCustom\site.js" />
+    <Content Include="Scripts\site.js" />
     <Content Include="Scripts\vendor\bootstrap.bundle.js" />
     <Content Include="Scripts\vendor\bootstrap.bundle.min.js" />
     <Content Include="Scripts\vendor\bootstrap.js" />
