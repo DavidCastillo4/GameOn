@@ -43,7 +43,7 @@ namespace slnGameOn.Models
 
         public string MaritalStatus { get; set; }
 
-        public string PassWord { get; set; }
+        public string Password { get; set; }
 
         public List<Phone> Phone { get; set; }
 

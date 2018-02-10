@@ -34,7 +34,7 @@ namespace slnGameOn.Mapper
                                AddressId = customerDataRow[FieldNames.Customer.AddressId].ToString(),
                                Address = customerDataRow[FieldNames.Customer.Address].ToString(),
                                CityStateZip = customerDataRow[FieldNames.Customer.CityStateZip].ToString(),
-                               PassWord = customerDataRow[FieldNames.Customer.Password].ToString()
+                               Password = customerDataRow[FieldNames.Customer.Password].ToString()
                            };
             return customer;
         }
