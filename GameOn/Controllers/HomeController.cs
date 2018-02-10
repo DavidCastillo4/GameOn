@@ -1,5 +1,5 @@
 ﻿//  --------------------------------------------------------------------------------------
-// slnGameOn.GameOnController.cs
+// slnGameOn.HomeController.cs
 // 2018/02/09
 //  --------------------------------------------------------------------------------------
 
@@ -10,7 +10,7 @@ using GameOn.Models;
 
 namespace GameOn.Controllers
 {
-    public class GameOnController : Controller
+    public class HomeController : Controller
     {
         public ActionResult Account()
         {
@@ -34,13 +34,13 @@ namespace GameOn.Controllers
             return View("Account", ModelCust);
         }
 
-        public ActionResult Browse()
+        public ActionResult Index()
         {
             return View();
         }
 
         [HttpPost]
-        public ActionResult Browse(string btSubmit)
+        public ActionResult Index(string btSubmit)
         {
             var ModelCust = new Customer(6);
             return View("Cart", ModelCust);
