@@ -5,9 +5,9 @@
 
 using System;
 using System.Data;
-using slnGameOn.Models;
+using GameOn.Models;
 
-namespace slnGameOn.Mapper
+namespace GameOn.Mapper
 {
     public class PhoneMapper : MapperBase
     {

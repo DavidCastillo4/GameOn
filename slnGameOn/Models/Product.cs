@@ -3,7 +3,7 @@
 // 2018/02/09
 //  --------------------------------------------------------------------------------------
 
-namespace slnGameOn.Models
+namespace GameOn.Models
 {
     public class Product
     {

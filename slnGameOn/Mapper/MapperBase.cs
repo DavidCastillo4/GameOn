@@ -3,9 +3,7 @@
 // 2018/02/10
 //  --------------------------------------------------------------------------------------
 
-using System.Runtime.InteropServices.ComTypes;
-
-namespace slnGameOn.Mapper
+namespace GameOn.Mapper
 {
     public abstract class MapperBase
     {

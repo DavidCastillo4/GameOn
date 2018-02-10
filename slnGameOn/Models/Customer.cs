@@ -5,7 +5,7 @@
 
 using System.Collections.Generic;
 
-namespace slnGameOn.Models
+namespace GameOn.Models
 {
     public class Customer
     {

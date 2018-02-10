@@ -3,14 +3,12 @@
 // 2018/02/09
 //  --------------------------------------------------------------------------------------
 
-using System;
-using System.Data;
 using System.Web.Mvc;
-using slnGameOn.Database;
-using slnGameOn.Mapper;
-using slnGameOn.Models;
+using GameOn.Database;
+using GameOn.Mapper;
+using GameOn.Models;
 
-namespace slnGameOn.Controllers
+namespace GameOn.Controllers
 {
     public class GameOnController : Controller
     {

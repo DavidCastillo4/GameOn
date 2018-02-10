@@ -3,7 +3,7 @@
 // 2018/02/10
 //  --------------------------------------------------------------------------------------
 
-namespace slnGameOn.Mapper
+namespace GameOn.Mapper
 {
     public class FieldNames
     {
