@@ -1,5 +1,4 @@
-﻿@using GameOn.Models
-@model GameOn.Models.Customer
+﻿@model GameOn.Models.Customer
 @{
     ViewBag.Title = "Account";
     Layout = "~/views/Home/_Layout.cshtml";
@@ -19,26 +18,22 @@
         </tr>
         <tr>
             <td colspan="2"></td>
-            <td class="Label">First Name</td>
+            <td class="Label">@Html.LabelFor(p => p.FirstName)</td>
+            <td class="Data">@Html.TextBoxFor(p => p.FirstName, new {@class = "Input"})</td>
+            <td colspan="2"></td>
+        </tr>
+        <tr>
+            <td colspan="2"></td>
+            <td class="Label">@Html.LabelFor(p => p.LastName)</td>
             <td class="Data">
-                <input id="FirstName" class="Input" type="text" value="@Model.FirstName"/>
+                @Html.TextBoxFor(p => p.LastName, new {@class = "Input"})
             </td>
             <td colspan="2"></td>
         </tr>
         <tr>
             <td colspan="2"></td>
-            <td class="Label">Last Name</td>
-            <td class="Data">
-                <input id="LastName" class="Input" type="text" value="@Model.LastName"/>
-            </td>
-            <td colspan="2"></td>
-        </tr>
-        <tr>
-            <td colspan="2"></td>
-            <td class="Label">Birth Date</td>
-            <td class="Data">
-                <input id="DOB" class="Input" type="text" value="@Model.DOB"/>
-            </td>
+            <td class="Label">@Html.LabelFor(p=>p.DOB)</td>
+            <td class="Data">@Html.TextBoxFor(p=>p.DOB, new{@class="Input"})</td>
             <td colspan="2"></td>
         </tr>
         <tr>
@@ -53,7 +48,7 @@
         </tr>
         <tr>
             <td colspan="2"></td>
-            <td class="Label">Marital Status</td>
+            <td class="Label">@Html.LabelFor(p=>p.MaritalStatus)</td>
             <td class="Data">
                 <select class="Input" id="MaritalStatus" style="width: 150px;">
                     <option value="S">Single</option><option value="M">Married</option>
@@ -63,34 +58,26 @@
         </tr>
         <tr>
             <td colspan="2"></td>
-            <td class="Label">Login Email</td>
-            <td class="Data">
-                <input id="Email" class="Input" type="text" value="@Model.Email"/>
-            </td>
+            <td class="Label">@Html.LabelFor(p=>p.Email)</td>
+            <td class="Data">@Html.TextBoxFor(p=>p.Email, new{@class="Input"})</td>
             <td colspan="2"></td>
         </tr>
         <tr>
             <td colspan="2"></td>
-            <td class="Label">Billing Address</td>
-            <td class="Data">
-                <input id="Address" class="Input" type="text" value="@Model.Address"/>
-            </td>
+            <td class="Label">@Html.LabelFor(p=>p.Address)</td>
+            <td class="Data">@Html.TextBoxFor(p=>p.Address, new{@class="Input"})</td>
             <td colspan="2"></td>
         </tr>
         <tr>
             <td colspan="2"></td>
-            <td class="Label">&nbsp;</td>
-            <td class="Data">
-                <input id="CityStateZip" class="Input" type="text" value="@Model.CityStateZip"/>
-            </td>
+            <td class="Label"></td>
+            <td class="Data">@Html.TextBoxFor(p=>p.CityStateZip, new{@class="Input"})</td>
             <td colspan="2"></td>
         </tr>
         <tr>
             <td colspan="2"></td>
-            <td class="Label">Password</td>
-            <td class="Data">
-                <input id="PassWord" class="Input" type="password" value="@Model.Password"/>
-            </td>
+            <td class="Label">@Html.DisplayFor(p=>p.Password)</td>
+            <td class="Data">@Html.PasswordFor(p=>p.Password, new{@class="Input"})</td>
             <td colspan="2"></td>
         </tr>
         <tr>
@@ -102,20 +89,18 @@
             <td class="Margin">&nbsp;</td>
         </tr>
 
-        @foreach (Phone t in Model.Phone)
+        @foreach (var t in Model.Phone)
         {
             <tr>
                 <td colspan="2"></td>
-                <td class="Label">@t.Type </td>
-                <td class="Data">
-                    <input id="@t.PhoneId " class="Input" type="text" value='@t.PhoneNumber '/>
-                </td>
+                <td class="Label">@Html.LabelFor(p=>t.Type)</td>
+                <td class="Data">@Html.TextBoxFor(p=>t.PhoneNumber, new{@class="Input"})</td>
                 <td colspan="2"></td>
             </tr>
         }
         <tr>
             <td colspan="6">
-                <input type="submit" name="btSubmit" value="Pass Empty Model to Same Page"/>
+                <input type="submit" value="Submit"/>
             </td>
         </tr>
 

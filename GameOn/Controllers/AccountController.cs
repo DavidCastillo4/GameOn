@@ -13,7 +13,7 @@ namespace GameOn.Controllers
     public class AccountController : Controller
     {
         // GET: Account
-        public ActionResult Index(int id)
+        public ActionResult Index(int id=0)
         {
             var repository = new Repository();
 
