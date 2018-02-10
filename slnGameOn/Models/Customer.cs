@@ -10,8 +10,14 @@ namespace slnGameOn.Models
     public class Customer
     {
         public Customer(int id)
+            : this()
         {
             CustomerId = id;
+        }
+
+        public Customer()
+        {
+            // Default constructor
             Phone = new List<Phone>();
         }
 
