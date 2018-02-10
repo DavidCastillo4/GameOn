@@ -24,17 +24,17 @@ namespace slnGameOn.Mapper
         {
             var customer = new Customer
                            {
-                               FirstName = customerDataRow["FirstName"].ToString(),
-                               LastName = customerDataRow["LastName"].ToString(),
-                               Gender = customerDataRow["Gender"].ToString(),
-                               DOB = customerDataRow["DOB"].ToString(),
-                               MaritalStatus = customerDataRow["MaritalStatus"].ToString(),
-                               EmailId = customerDataRow["EmailId"].ToString(),
-                               Email = customerDataRow["Email"].ToString(),
-                               AddressId = customerDataRow["AddressId"].ToString(),
-                               Address = customerDataRow["Address"].ToString(),
-                               CityStateZip = customerDataRow["CityStateZip"].ToString(),
-                               PassWord = customerDataRow["PassWord"].ToString()
+                               FirstName = customerDataRow[FieldNames.Customer.FirstName].ToString(),
+                               LastName = customerDataRow[FieldNames.Customer.LastName].ToString(),
+                               Gender = customerDataRow[FieldNames.Customer.Gender].ToString(),
+                               DOB = customerDataRow[FieldNames.Customer.DateOfBirth].ToString(),
+                               MaritalStatus = customerDataRow[FieldNames.Customer.MaritalStatus].ToString(),
+                               EmailId = customerDataRow[FieldNames.Customer.EmailId].ToString(),
+                               Email = customerDataRow[FieldNames.Customer.Email].ToString(),
+                               AddressId = customerDataRow[FieldNames.Customer.AddressId].ToString(),
+                               Address = customerDataRow[FieldNames.Customer.Address].ToString(),
+                               CityStateZip = customerDataRow[FieldNames.Customer.CityStateZip].ToString(),
+                               PassWord = customerDataRow[FieldNames.Customer.Password].ToString()
                            };
             return customer;
         }

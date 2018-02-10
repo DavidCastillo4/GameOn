@@ -194,6 +194,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Mapper\CustomerMapper.cs" />
+    <Compile Include="Mapper\FieldNames.cs" />
     <Compile Include="Mapper\PhoneMapper.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\Phone.cs" />
