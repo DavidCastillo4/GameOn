@@ -24,7 +24,7 @@ namespace GameOn.Mapper
         {
             var phoneMapper = new PhoneMapper();
             foreach (DataRow phoneRow in phoneData.Rows)
-                customer.Phone.Add(phoneMapper.Map(phoneRow));
+                customer.PhoneNumbers.Add(phoneMapper.Map(phoneRow));
         }
 
         Customer CreateCustomer(DataRow customerDataRow)

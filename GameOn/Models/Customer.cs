@@ -19,7 +19,7 @@ namespace GameOn.Models
         public Customer()
         {
             // Default constructor
-            Phone = new List<Phone>();
+            PhoneNumbers = new List<Phone>();
         }
 
         [DisplayName("Billing Address")]
@@ -52,7 +52,7 @@ namespace GameOn.Models
 
         public string Password { get; set; }
 
-        public List<Phone> Phone { get; set; }
+        public List<Phone> PhoneNumbers { get; set; }
 
         public int PhoneId { get; set; }
     }
