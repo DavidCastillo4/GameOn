@@ -11,10 +11,7 @@
 		<link href="~/Content/Layout.css" rel="stylesheet" />
 </head>
 <body style="margin: 0px; width: 100%; background-color: #E2E4DC;">
-	@using (Html.BeginForm())
-	{
-
-		<table style="width: 100%; margin: 0px; background-color: #D6D7D1; top: 0px;left: 0px; position: fixed; z-index: 99;" cellpadding="0" cellspacing="0" border="0">
+	<table style="width: 100%; margin: 0px; background-color: #D6D7D1; top: 0px;left: 0px; position: fixed; z-index: 99;" cellpadding="0" cellspacing="0" border="0">
 			<tr>
 				<td class="bg1" rowspan="2" style="padding: 10px 60px 10px 10px; width: 20px;">
 					<table style="margin: 0px;" cellpadding="0" cellspacing="0">
@@ -40,7 +37,7 @@
 		<div>
 			@RenderBody()
 		</div>
-	}
+	
 	
 	
 	<script src="~/Scripts/vendor/jquery-3.3.1.min.js"></script>

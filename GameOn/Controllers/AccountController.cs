@@ -5,7 +5,6 @@
 
 using System.Collections.Generic;
 using System.Linq;
-using System.Security.Cryptography.X509Certificates;
 using System.Web.Mvc;
 using GameOn.Database;
 using GameOn.Mapper;
@@ -53,13 +52,13 @@ namespace GameOn.Controllers
             return View(customer);
         }
 
-        [Authorize]
-        public ActionResult RequiresAuthorization()
+        public ActionResult Login()
         {
             return View();
         }
 
-        public ActionResult Login()
+        [Authorize]
+        public ActionResult RequiresAuthorization()
         {
             return View();
         }
