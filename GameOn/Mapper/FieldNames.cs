@@ -1,5 +1,5 @@
 ﻿//  --------------------------------------------------------------------------------------
-// slnGameOn.FieldNames.cs
+// GameOn.FieldNames.cs
 // 2018/02/10
 //  --------------------------------------------------------------------------------------
 
@@ -25,7 +25,7 @@ namespace GameOn.Mapper
         public class Phone
         {
             public const string Id = "PhoneId";
-            public const string PhoneNumber = "PhoneNumber";
+            public const string PhoneNumber = "Phone";
             public const string PhoneType = "PhoneType";
             public const string PhoneTypeId = "PhoneTypeId";
         }

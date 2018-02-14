@@ -40,7 +40,7 @@
             <td colspan="2"></td>
             <td class="Label">Gender</td>
             <td class="Data">
-                @Html.DropDownListFor(p => p.Gender, (SelectList) ViewBag.Genders)
+                @Html.DropDownListFor(p => p.Gender, (IEnumerable<SelectListItem>) ViewBag.Genders)
             </td>
             <td colspan="2"></td>
         </tr>
@@ -48,7 +48,7 @@
             <td colspan="2"></td>
             <td class="Label">@Html.LabelFor(p => p.MaritalStatus)</td>
             <td class="Data">
-                @Html.DropDownListFor(p => p.MaritalStatus, (SelectList) ViewBag.MaritalStatuses)
+                @Html.DropDownListFor(p => p.MaritalStatus, (IEnumerable<SelectListItem>) ViewBag.MaritalStatuses)
             </td>
             <td colspan="2"></td>
         </tr>

@@ -15,7 +15,8 @@ namespace GameOn.Controllers
     public class AccountController : Controller
     {
         // GET: Account
-        public ActionResult Index(int id = 0)
+        // TODO:  Remove this hard-coded value.  Default for the id parameter should be 0.
+        public ActionResult Index(int id = 4)
         {
             var repository = new Repository();
 
@@ -27,7 +28,10 @@ namespace GameOn.Controllers
             var query = "spGetAccountInfo @CustomerId=" + id;
 
             var ds = repository.ReturnDataSet(query);
-
+            // NOTE:  This is an ugly approach necessitated by using raw ADO.NET.  It's another
+            // bad pattern to get into.
+            if (ds.Tables.Count != 3)
+                return HttpNotFound($"Customer id {id} does not exist.");
             var mapper = new CustomerMapper();
             var customer = mapper.Map(ds);
             CreateSelectLists();
@@ -48,17 +52,16 @@ namespace GameOn.Controllers
             return View(customer);
         }
 
-        static SelectList CreateGendersSelectList()
+        static IEnumerable<SelectListItem> CreateGendersSelectList()
         {
-            var values = new Dictionary<string, string> {{string.Empty, null}, {"M", "Married"}, {"S", "Single"}};
-            var selectListItems = values.Select(p => new SelectListItem {Text = p.Value, Value = p.Key});
-            return new SelectList(selectListItems);
+            var values = new Dictionary<string, string> {{string.Empty, null}, {"M", "Male"}, {"F", "Female"}};
+            return values.Select(p => new SelectListItem {Text = p.Value, Value = p.Key});
         }
 
-        static SelectList CreateMaritalStatusesSelectList()
+        static IEnumerable<SelectListItem> CreateMaritalStatusesSelectList()
         {
-            var values = new[] {"S", "M"};
-            return new SelectList(values);
+            var values = new Dictionary<string, string> {{"S", "Single"}, {"M", "Married"}};
+            return values.Select(p => new SelectListItem {Text = p.Value, Value = p.Key});
         }
 
         void CreateSelectLists()

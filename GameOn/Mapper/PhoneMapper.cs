@@ -1,5 +1,5 @@
 ﻿//  --------------------------------------------------------------------------------------
-// slnGameOn.PhoneMapper.cs
+// GameOn.PhoneMapper.cs
 // 2018/02/10
 //  --------------------------------------------------------------------------------------
 
@@ -15,8 +15,8 @@ namespace GameOn.Mapper
         {
             return new Phone
                    {
-                       PhoneId = Convert.ToInt32(FieldNames.Phone.Id),
-                       TypeId = Convert.ToInt32(FieldNames.Phone.PhoneTypeId),
+                       PhoneId = Convert.ToInt32(phoneRow[FieldNames.Phone.Id]),
+                       TypeId = Convert.ToInt32(phoneRow[FieldNames.Phone.PhoneTypeId]),
                        Type = GetStringValue(phoneRow[FieldNames.Phone.PhoneType]),
                        PhoneNumber = GetStringValue(phoneRow[FieldNames.Phone.PhoneNumber])
                    };
