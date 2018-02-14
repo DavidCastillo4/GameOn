@@ -5,6 +5,7 @@
 
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Web.Mvc;
 using GameOn.Database;
 using GameOn.Mapper;
@@ -50,6 +51,17 @@ namespace GameOn.Controllers
             // The below line of code will send the user back to the form, displaying
             // the updated data.
             return View(customer);
+        }
+
+        [Authorize]
+        public ActionResult RequiresAuthorization()
+        {
+            return View();
+        }
+
+        public ActionResult Login()
+        {
+            return View();
         }
 
         static IEnumerable<SelectListItem> CreateGendersSelectList()
