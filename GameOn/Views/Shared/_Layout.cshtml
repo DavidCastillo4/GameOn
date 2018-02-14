@@ -26,16 +26,19 @@
 				</td>
 				<td colspan="8" class="bg1">&nbsp;</td>
 			</tr>
-			<tr>
-				<td class="NavTD" id="tdBrowse"><a class="NavTD" href="Browse" id="Browse">Browse</a></td>
-				<td class="bg1" width="30px">&nbsp;</td>
-				<td class="NavTD" id="tdCart"><a class="NavTD" href="Cart" id="Cart">Cart</a></td>
-				<td class="bg1">&nbsp;</td>
-			    <td class="NavTD" id="tdOrderHistory"><a class="NavTD" href="OrderHistory" id="Cart">Order History</a></td>
-				<td class="bg1" width="30px">&nbsp;</td>
-			    <td class="NavTD" id="tdAccount">@Html.ActionLink("Account Info", "Index", "Account", null, new{@class="NavTD"})</td>
-				<td class="bg1" width="20px">&nbsp;</td>
-			</tr>
+						<tr>
+							@*<td class="NavTD" id="tdBrowse"><a class="NavTD" href="Browse" id="Browse">Browse</a></td>*@
+							<td class="NavTD" id="tdBrowse">@Html.ActionLink("Browse", "Index", "Home", null, new { @class = "NavTD" })</td>
+							<td class="bg1" width="30px">&nbsp;</td>
+							@*<td class="NavTD" id="tdCart"><a class="NavTD" href="Cart" id="Cart">Cart</a></td>*@
+							<td class="NavTD" id="tdCart">@Html.ActionLink("Cart", "Cart", "Home", null, new { @class = "NavTD" })</td>
+							<td class="bg1">&nbsp;</td>
+							@*<td class="NavTD" id="tdOrderHistory"><a class="NavTD" href="OrderHistory" id="Cart">Order History</a></td>*@
+							<td class="NavTD" id="tdOrderHistory">@Html.ActionLink("Order History", "OrderHistory", "Home", null, new { @class = "NavTD" })</td>
+							<td class="bg1" width="30px">&nbsp;</td>
+							<td class="NavTD" id="tdAccount">@Html.ActionLink("Account Info", "Index", "Account", null, new { @class = "NavTD" })</td>
+							<td class="bg1" width="20px">&nbsp;</td>
+						</tr>
 		</table>
 		<div>
 			@RenderBody()

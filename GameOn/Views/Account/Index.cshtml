@@ -1,108 +1,110 @@
 ﻿@model GameOn.Models.Customer
 @{
-    ViewBag.Title = "Account";
-    Layout = "~/views/Shared/_Layout.cshtml";
+	ViewBag.Title = "Account";
+	Layout = "~/views/Shared/_Layout.cshtml";
 }
 
 
 @using (Html.BeginForm())
 {
-    <table style="position: relative; top: 100px; width: 100%;" cellpadding="0" cellspacing="0">
-        <tr>
-            <td class="Margin">&nbsp;</td>
-            <td>&nbsp;</td>
-            <td class="TitleLeft">Profile</td>
-            <td class="TitleRight">Edit</td>
-            <td>&nbsp;</td>
-            <td class="Margin">&nbsp;</td>
-        </tr>
-        <tr>
-            <td colspan="2"></td>
-            <td class="Label">@Html.LabelFor(p => p.FirstName)</td>
-            <td class="Data">@Html.TextBoxFor(p => p.FirstName, new {@class = "Input"})</td>
-            <td colspan="2"></td>
-        </tr>
-        <tr>
-            <td colspan="2"></td>
-            <td class="Label">@Html.LabelFor(p => p.LastName)</td>
-            <td class="Data">
-                @Html.TextBoxFor(p => p.LastName, new {@class = "Input"})
-            </td>
-            <td colspan="2"></td>
-        </tr>
-        <tr>
-            <td colspan="2"></td>
-            <td class="Label">@Html.LabelFor(p => p.DOB)</td>
-            <td class="Data">@Html.TextBoxFor(p => p.DOB, new {@class = "Input"})</td>
-            <td colspan="2"></td>
-        </tr>
-        <tr>
-            <td colspan="2"></td>
-            <td class="Label">Gender</td>
-            <td class="Data">
-                @Html.DropDownListFor(p => p.Gender, (IEnumerable<SelectListItem>) ViewBag.Genders)
-            </td>
-            <td colspan="2"></td>
-        </tr>
-        <tr>
-            <td colspan="2"></td>
-            <td class="Label">@Html.LabelFor(p => p.MaritalStatus)</td>
-            <td class="Data">
-                @Html.DropDownListFor(p => p.MaritalStatus, (IEnumerable<SelectListItem>) ViewBag.MaritalStatuses)
-            </td>
-            <td colspan="2"></td>
-        </tr>
-        <tr>
-            <td colspan="2"></td>
-            <td class="Label">@Html.LabelFor(p => p.Email)</td>
-            <td class="Data">@Html.TextBoxFor(p => p.Email, new {@class = "Input"})</td>
-            <td colspan="2"></td>
-        </tr>
-        <tr>
-            <td colspan="2"></td>
-            <td class="Label">@Html.LabelFor(p => p.Address)</td>
-            <td class="Data">@Html.TextBoxFor(p => p.Address, new {@class = "Input"})</td>
-            <td colspan="2"></td>
-        </tr>
-        <tr>
-            <td colspan="2"></td>
-            <td class="Label"></td>
-            <td class="Data">@Html.TextBoxFor(p => p.CityStateZip, new {@class = "Input"})</td>
-            <td colspan="2"></td>
-        </tr>
-        <tr>
-            <td colspan="2"></td>
-            <td class="Label">@Html.DisplayFor(p => p.Password)</td>
-            <td class="Data">@Html.PasswordFor(p => p.Password, new {@class = "Input"})</td>
-            <td colspan="2"></td>
-        </tr>
-        <tr>
-            <td class="Margin">&nbsp;</td>
-            <td>&nbsp;</td>
-            <td class="TitleLeft">Contact</td>
-            <td class="TitleRight">Edit</td>
-            <td>&nbsp;</td>
-            <td class="Margin">&nbsp;</td>
-        </tr>
+	<table style="position: relative; top: 100px; width: 100%;" cellpadding="0" cellspacing="0">
+		<tr>
+			<td class="Margin">&nbsp;</td>
+			<td>&nbsp;</td>
+			<td class="TitleLeft">Profile</td>
+			<td class="TitleRight">Edit</td>
+			<td>&nbsp;</td>
+			<td class="Margin">&nbsp;</td>
+		</tr>
+		<tr>
+			<td colspan="2"></td>
+			<td class="Label">@Html.LabelFor(p => p.FirstName)</td>
+			<td class="Data">@Html.TextBoxFor(p => p.FirstName, new { @class = "Input" })</td>
+			<td colspan="2"></td>
+		</tr>
+		<tr>
+			<td colspan="2"></td>
+			<td class="Label">@Html.LabelFor(p => p.LastName)</td>
+			<td class="Data">
+				@Html.TextBoxFor(p => p.LastName, new { @class = "Input" })
+			</td>
+			<td colspan="2"></td>
+		</tr>
+		<tr>
+			<td colspan="2"></td>
+			<td class="Label">@Html.LabelFor(p => p.DOB)</td>
+			<td class="Data">@Html.TextBoxFor(p => p.DOB, new { @class = "Input" })</td>
+			<td colspan="2"></td>
+		</tr>
+		<tr>
+			<td colspan="2"></td>
+			<td class="Label">Gender</td>
+			<td class="Data">
+				@Html.DropDownListFor(p => p.Gender, (IEnumerable<SelectListItem>)ViewBag.Genders)
+			</td>
+			<td colspan="2"></td>
+		</tr>
+		<tr>
+			<td colspan="2"></td>
+			<td class="Label">@Html.LabelFor(p => p.MaritalStatus)</td>
+			<td class="Data">
+				@Html.DropDownListFor(p => p.MaritalStatus, (IEnumerable<SelectListItem>)ViewBag.MaritalStatuses)
+			</td>
+			<td colspan="2"></td>
+		</tr>
+		<tr>
+			<td colspan="2"></td>
+			<td class="Label">@Html.LabelFor(p => p.Email)</td>
+			<td class="Data">@Html.TextBoxFor(p => p.Email, new { @class = "Input" })</td>
+			<td colspan="2"></td>
+		</tr>
+		<tr>
+			<td colspan="2"></td>
+			<td class="Label">@Html.LabelFor(p => p.Address)</td>
+			<td class="Data">@Html.TextBoxFor(p => p.Address, new { @class = "Input" })</td>
+			<td colspan="2"></td>
+		</tr>
+		<tr>
+			<td colspan="2"></td>
+			<td class="Label"></td>
+			<td class="Data">@Html.TextBoxFor(p => p.CityStateZip, new { @class = "Input" })</td>
+			<td colspan="2"></td>
+		</tr>
+		<tr>
+			<td colspan="2"></td>
+			<td class="Label">@Html.DisplayFor(p => p.Password)</td>
+			<td class="Data">@Html.PasswordFor(p => p.Password, new { @class = "Input" })</td>
+			<td colspan="2"></td>
+		</tr>
+		<tr>
+			<td class="Margin">&nbsp;</td>
+			<td>&nbsp;</td>
+			<td class="TitleLeft">Contact</td>
+			<td class="TitleRight">Edit</td>
+			<td>&nbsp;</td>
+			<td class="Margin">&nbsp;</td>
+		</tr>
 
-        @foreach (var t in Model.PhoneNumbers)
-        {
-            <tr>
-                <td colspan="2"></td>
-                <td class="Label">@Html.LabelFor(p => t.Type)</td>
-                <td class="Data">@Html.TextBoxFor(p => t.PhoneNumber, new {@class = "Input"})</td>
-                <td colspan="2"></td>
-            </tr>
-        }
-        <tr>
-            <td colspan="6">
-                <input type="submit" value="Submit"/>
-            </td>
-        </tr>
+		@foreach (var t in Model.PhoneNumbers)
+		{
+			<tr>
+				<td colspan="2"></td>
+				<td class="Label">@Html.LabelFor(p => t.Type)</td>
+				<td class="Data">@Html.TextBoxFor(p => t.PhoneNumber, new { @class = "Input" })</td>
+				<td colspan="2"></td>
+			</tr>
+		}
+		<tr>
+			<td colspan="6">
+				<input type="submit" value="Submit" />
+			</td>
+		</tr>
 
-    </table>
+	</table>
 }
 
+<script src="~/Scripts/vendor/jquery-3.3.1.min.js"></script>
+<script src="~/Scripts/site.js"></script>
 <script type="text/javascript">
     $(document).ready(function() {
         $('#Gender').val('@Model.Gender');
