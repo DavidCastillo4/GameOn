@@ -1,4 +1,12 @@
-﻿
+﻿body {
+    margin: 0px;
+    width: 100%;
+    background-color: #E2E4DC;
+}
+
+
+
+
 .bg1 {
 	background-color: #D6D7D1
 }

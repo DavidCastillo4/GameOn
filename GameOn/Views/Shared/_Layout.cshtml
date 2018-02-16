@@ -8,44 +8,94 @@
 	<meta name="viewport" content="width=device-width" />
 	<title>@ViewBag.Title</title>
 		<link href="~/Content/site.css" rel="stylesheet" />
-		<link href="~/Content/Layout.css" rel="stylesheet" />
+    <link href="~/Content/Layout.css" rel="stylesheet" />
+    <link href="~/Content/logo.css" rel="stylesheet"/>
 </head>
-<body style="margin: 0px; width: 100%; background-color: #E2E4DC;">
-	<table style="width: 100%; margin: 0px; background-color: #D6D7D1; top: 0px;left: 0px; position: fixed; z-index: 99;" cellpadding="0" cellspacing="0" border="0">
-			<tr>
-				<td class="bg1" rowspan="2" style="padding: 10px 60px 10px 10px; width: 20px;">
-					<table style="margin: 0px;" cellpadding="0" cellspacing="0">
-						<tr>
-							<td class="bg1 Game"><div class="Game2">Game</div></td>
-							<td class="bg1 On"><div class="On2">On</div></td>
-						</tr>
-					</table>
-				</td>
-				<td colspan="8" class="bg1">&nbsp;</td>
-			</tr>
-			<tr>
-				<td class="NavTD" id="tdBrowse"><a class="NavTD" href="Browse" id="Browse">Browse</a></td>
-				<td class="bg1" width="30px">&nbsp;</td>
-				<td class="NavTD" id="tdCart"><a class="NavTD" href="Cart" id="Cart">Cart</a></td>
-				<td class="bg1">&nbsp;</td>
-			    <td class="NavTD" id="tdOrderHistory"><a class="NavTD" href="OrderHistory" id="Cart">Order History</a></td>
-				<td class="bg1" width="30px">&nbsp;</td>
-			    <td class="NavTD" id="tdAccount">@Html.ActionLink("Account Info", "Index", "Account", null, new{@class="NavTD"})</td>
-				<td class="bg1" width="20px">&nbsp;</td>
-			</tr>
-		</table>
-		<div>
-			@RenderBody()
-		</div>
-	
-	
-	
-	<script src="~/Scripts/vendor/jquery-3.3.1.min.js"></script>
-    <script src="~/Scripts/site.js"></script>
-	<script type="text/javascript">
-			$(document).ready(function () {
-			});
-	</script>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            @*<table style="width: 100%; margin: 0px; background-color: #D6D7D1; top: 0px; left: 0px; position: fixed; z-index: 99;" cellpadding="0" cellspacing="0" border="0">*@
+            <table >
+                <tr>
+                    <td class="bg1" rowspan="2" style="padding: 10px 60px 10px 10px; width: 20px;">
+                        <table style="margin: 0px;" cellpadding="0" cellspacing="0">
+                            <tr>
+                                <td class="bg1 Game">
+                                    <div class="Game2">Game</div>
+                                </td>
+                                <td class="bg1 On">
+                                    <div class="On2">On</div>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td colspan="8" class="bg1">&nbsp;</td>
+                </tr>
+                <tr>
+                    <td class="NavTD" id="tdBrowse"><a class="NavTD" href="Browse" id="Browse">Browse</a></td>
+                    <td class="bg1" width="30px">&nbsp;</td>
+                    <td class="NavTD" id="tdCart"><a class="NavTD" href="Cart" id="Cart">Cart</a></td>
+                    <td class="bg1">&nbsp;</td>
+                    <td class="NavTD" id="tdOrderHistory"><a class="NavTD" href="OrderHistory" id="Cart">Order History</a></td>
+                    <td class="bg1" width="30px">&nbsp;</td>
+                    <td class="NavTD" id="tdAccount">@Html.ActionLink("Account Info", "Index", "Account", null, new { @class = "NavTD" })</td>
+                    <td class="bg1" width="20px">&nbsp;</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-md-2">
+            <div class="logo-game-background"><div class="logo-text logo-game-text">Game</div></div>
+            <div class="logo-on-background"><div class="logo-text logo-on-text">On</div></div>
+        </div>
+        <div class="col-md-10">
+            <nav class="navbar">
+                <div>
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a href="#">Browse</a></li>
+                    <li class="nav-item"><a href="#">Cart</a></li>
+                    <li class="nav-item"><a href="#">Order History</a></li>
+                    <li class="nav-item"><a href="#">Account Info</a></li>
+                </ul>
+                    </div>
+            </nav>
+        </div>
+        <div class="col-md-2">
+
+        </div>
+        <div class="col-md-2">
+
+        </div>
+        <div class="col-md-2">
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div>
+                @RenderBody()
+            </div>
+        </div>        
+    </div>
+</div>
+    
+    
+    
+
+
+
+
+
+
+<script src="~/Scripts/vendor/jquery-3.3.1.min.js"></script>
+<script src="~/Scripts/site.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+    });
+</script>
 
 </body>
 </html>

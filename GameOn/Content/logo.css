@@ -1,0 +1,36 @@
+﻿.logo-game-text {
+    color: limegreen;
+    padding-left: 5px;
+    width: 100%;
+}
+
+.logo-game-background {
+    border-radius: 10px 0px 0px 10px;
+    background-color: white;
+    padding-left: 5px;
+    padding-right: 5px;
+    float: left;
+    overflow: hidden;
+}
+
+.logo-on-text {
+    color: white;
+    width: 10px;
+    width: 100%;
+}
+
+.logo-on-background {
+    border-radius: 0px 20px 20px 0px;
+    background-color: limegreen;
+    padding-left: 5px;
+    padding-right: 12px;
+    float: left;
+}
+
+.logo-text {
+    line-height: 50px;
+    font-family: Calibri;
+    font-size: 40pt;
+    font-style: normal;
+    font-weight: 900;
+}

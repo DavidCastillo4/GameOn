@@ -122,6 +122,7 @@
     <Content Include="App_Data\GameOn_log.ldf">
       <DependentUpon>GameOn.mdf</DependentUpon>
     </Content>
+    <Content Include="Content\logo.css" />
     <Content Include="Content\vendor\bootstrap-grid.css" />
     <Content Include="Content\vendor\bootstrap-grid.min.css" />
     <Content Include="Content\vendor\bootstrap-reboot.css" />
