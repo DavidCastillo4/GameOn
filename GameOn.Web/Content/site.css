@@ -1,1 +1,4 @@
-﻿
+﻿/* Bootstrap Overrides */
+.nav li {
+    display: inline-block;
+}
