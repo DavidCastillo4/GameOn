@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.27130.2027
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameOn", "GameOn\GameOn.csproj", "{C145DDE7-6642-4748-B9A5-2B4C4B8A7529}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameOn.Web", "GameOn.Web\GameOn.Web.csproj", "{153A4367-9F22-4249-B0BA-E6F3CE42738A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{C145DDE7-6642-4748-B9A5-2B4C4B8A7529}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C145DDE7-6642-4748-B9A5-2B4C4B8A7529}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C145DDE7-6642-4748-B9A5-2B4C4B8A7529}.Release|Any CPU.Build.0 = Release|Any CPU
+		{153A4367-9F22-4249-B0BA-E6F3CE42738A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{153A4367-9F22-4249-B0BA-E6F3CE42738A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{153A4367-9F22-4249-B0BA-E6F3CE42738A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{153A4367-9F22-4249-B0BA-E6F3CE42738A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
