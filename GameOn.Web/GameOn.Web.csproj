@@ -91,6 +91,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\site.css" />
     <Content Include="Content\vendor\bootstrap-grid.css" />
     <Content Include="Content\vendor\bootstrap-grid.min.css" />
     <Content Include="Content\vendor\bootstrap-reboot.css" />
@@ -98,6 +99,7 @@
     <Content Include="Content\vendor\bootstrap.css" />
     <Content Include="Content\vendor\bootstrap.min.css" />
     <Content Include="Global.asax" />
+    <Content Include="Scripts\site.js" />
     <Content Include="Scripts\vendor\bootstrap\bootstrap.bundle.js" />
     <Content Include="Scripts\vendor\bootstrap\bootstrap.bundle.min.js" />
     <Content Include="Scripts\vendor\bootstrap\bootstrap.js" />
