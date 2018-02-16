@@ -1,4 +1,5 @@
 ﻿<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
   <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
   <Import Project="..\packages\Microsoft.Net.Compilers.2.1.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.2.1.0\build\Microsoft.Net.Compilers.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
@@ -24,6 +25,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <TypeScriptToolsVersion>2.5</TypeScriptToolsVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -89,7 +91,52 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\vendor\bootstrap-grid.css" />
+    <Content Include="Content\vendor\bootstrap-grid.min.css" />
+    <Content Include="Content\vendor\bootstrap-reboot.css" />
+    <Content Include="Content\vendor\bootstrap-reboot.min.css" />
+    <Content Include="Content\vendor\bootstrap.css" />
+    <Content Include="Content\vendor\bootstrap.min.css" />
     <Content Include="Global.asax" />
+    <Content Include="Scripts\vendor\bootstrap\bootstrap.bundle.js" />
+    <Content Include="Scripts\vendor\bootstrap\bootstrap.bundle.min.js" />
+    <Content Include="Scripts\vendor\bootstrap\bootstrap.js" />
+    <Content Include="Scripts\vendor\bootstrap\bootstrap.min.js" />
+    <Content Include="Scripts\vendor\bootstrap\esm\popper-utils.js" />
+    <Content Include="Scripts\vendor\bootstrap\esm\popper-utils.min.js" />
+    <Content Include="Scripts\vendor\bootstrap\esm\popper.js" />
+    <Content Include="Scripts\vendor\bootstrap\esm\popper.min.js" />
+    <Content Include="Scripts\vendor\bootstrap\popper-utils.js" />
+    <Content Include="Scripts\vendor\bootstrap\popper-utils.min.js" />
+    <Content Include="Scripts\vendor\bootstrap\popper.js" />
+    <Content Include="Scripts\vendor\bootstrap\popper.min.js" />
+    <Content Include="Scripts\vendor\bootstrap\umd\popper-utils.js" />
+    <Content Include="Scripts\vendor\bootstrap\umd\popper-utils.min.js" />
+    <Content Include="Scripts\vendor\bootstrap\umd\popper.js" />
+    <Content Include="Scripts\vendor\bootstrap\umd\popper.min.js" />
+    <Content Include="Scripts\vendor\bootstrap\umd\popper.min.js.map" />
+    <Content Include="Scripts\vendor\bootstrap\umd\popper.js.map" />
+    <Content Include="Scripts\vendor\bootstrap\umd\popper-utils.min.js.map" />
+    <Content Include="Scripts\vendor\bootstrap\umd\popper-utils.js.map" />
+    <Content Include="Scripts\vendor\bootstrap\README.md" />
+    <Content Include="Scripts\vendor\bootstrap\popper.min.js.map" />
+    <Content Include="Scripts\vendor\bootstrap\popper.js.map" />
+    <Content Include="Scripts\vendor\bootstrap\popper-utils.min.js.map" />
+    <Content Include="Scripts\vendor\bootstrap\popper-utils.js.map" />
+    <Content Include="Scripts\vendor\bootstrap\esm\popper.min.js.map" />
+    <Content Include="Scripts\vendor\bootstrap\esm\popper.js.map" />
+    <Content Include="Scripts\vendor\bootstrap\esm\popper-utils.min.js.map" />
+    <Content Include="Scripts\vendor\bootstrap\esm\popper-utils.js.map" />
+    <Content Include="Scripts\vendor\bootstrap\bootstrap.min.js.map" />
+    <Content Include="Scripts\vendor\bootstrap\bootstrap.js.map" />
+    <Content Include="Scripts\vendor\bootstrap\bootstrap.bundle.min.js.map" />
+    <Content Include="Scripts\vendor\bootstrap\bootstrap.bundle.js.map" />
+    <Content Include="Content\vendor\bootstrap.min.css.map" />
+    <Content Include="Content\vendor\bootstrap.css.map" />
+    <Content Include="Content\vendor\bootstrap-reboot.min.css.map" />
+    <Content Include="Content\vendor\bootstrap-reboot.css.map" />
+    <Content Include="Content\vendor\bootstrap-grid.min.css.map" />
+    <Content Include="Content\vendor\bootstrap-grid.css.map" />
     <None Include="Scripts\vendor\jquery\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\vendor\jquery\jquery-3.3.1.js" />
     <Content Include="Scripts\vendor\jquery\jquery-3.3.1.min.js" />
@@ -122,11 +169,18 @@
     <Folder Include="Controllers\" />
     <Folder Include="Models\" />
   </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="Scripts\vendor\bootstrap\index.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
   </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
   <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
   <ProjectExtensions>
