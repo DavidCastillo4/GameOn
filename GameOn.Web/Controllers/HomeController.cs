@@ -4,11 +4,19 @@
 //  --------------------------------------------------------------------------------------
 
 using System.Web.Mvc;
+using GameOn.Repository;
 
 namespace GameOn.Web.Controllers
 {
     public class HomeController : Controller
     {
+        readonly IRepository repository;
+
+        public HomeController(IRepository repository)
+        {
+            this.repository = repository;
+        }
+
         // GET: Home
         // This is the default page for this controller.  Since this is
         // the default controller for the application, this can be considered
