@@ -6,16 +6,19 @@
 using System.Linq;
 using System.Web.Mvc;
 using GameOn.Repository;
+using GameOn.Web.ViewModel;
 
 namespace GameOn.Web.Controllers
 {
     public class HomeController : Controller
     {
         readonly IRepository repository;
+        readonly BrowseViewModel.Factory browseViewModelFactory;
 
-        public HomeController(IRepository repository)
+        public HomeController(IRepository repository, BrowseViewModel.Factory browseViewModelFactory)
         {
             this.repository = repository;
+            this.browseViewModelFactory = browseViewModelFactory;
         }
 
         // GET: Home
@@ -25,7 +28,8 @@ namespace GameOn.Web.Controllers
         public ActionResult Index()
         {
             var allProducts = repository.Products;
-            return View(allProducts);
+            var viewModel = browseViewModelFactory.Invoke(allProducts);
+            return View(viewModel);
         }
 
         public ActionResult ProductDetails(int productId)
