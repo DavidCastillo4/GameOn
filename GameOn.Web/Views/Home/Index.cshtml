@@ -1,4 +1,5 @@
-﻿@model dynamic
+﻿@using GameOn.Model
+@model IList<Product>
 
 @{
     ViewBag.Title = "Home";
@@ -6,3 +7,9 @@
 }
 
 <h1>Browse</h1>
+<ul>
+    @foreach (var product in Model)
+    {
+        <li>@product.Name</li>
+    }
+</ul>

@@ -23,7 +23,8 @@ namespace GameOn.Web.Controllers
         // the 'home' page (i.e. what the user first sees when visiting the domain)
         public ActionResult Index()
         {
-            return View();
+            var allProducts = repository.Products;
+            return View(allProducts);
         }
     }
 }
