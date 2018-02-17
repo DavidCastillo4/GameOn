@@ -10,6 +10,6 @@
 <ul>
     @foreach (var product in Model)
     {
-        <li>@product.Name</li>
+        <li>@Html.ActionLink(product.Name, "ProductDetails", new{productId=product.Id})</li>
     }
 </ul>

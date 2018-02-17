@@ -3,6 +3,7 @@
 // 2018/02/16
 //  --------------------------------------------------------------------------------------
 
+using System.Linq;
 using System.Web.Mvc;
 using GameOn.Repository;
 
@@ -25,6 +26,12 @@ namespace GameOn.Web.Controllers
         {
             var allProducts = repository.Products;
             return View(allProducts);
+        }
+
+        public ActionResult ProductDetails(int productId)
+        {
+            var product = repository.Products.FirstOrDefault(p => p.Id == productId);
+            return View(product);
         }
     }
 }
