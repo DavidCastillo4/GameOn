@@ -40,6 +40,7 @@ namespace GameOn.Web
             // Register our custom types
             builder.RegisterType<InMemoryRepository>().As<IRepository>();
             builder.RegisterType<BrowseViewModel>();
+            builder.RegisterType<ProductSummaryViewModel>();
 
             // Build the container so we can use it
             var container = builder.Build();

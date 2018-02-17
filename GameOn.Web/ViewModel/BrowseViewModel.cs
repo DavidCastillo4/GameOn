@@ -12,11 +12,13 @@ namespace GameOn.Web.ViewModel
     {
         public delegate BrowseViewModel Factory(IList<Product> products);
 
-        public BrowseViewModel(IList<Product> products)
+        public BrowseViewModel(IList<Product> products, ProductSummaryViewModel.Factory productSummaryFactory)
         {
-            Products = products;
+            Products = new List<ProductSummaryViewModel>();
+            foreach (var product in products)
+                Products.Add(productSummaryFactory.Invoke(product));
         }
 
-        public IList<Product> Products { get; }
+        public IList<ProductSummaryViewModel> Products { get; }
     }
 }
