@@ -181,6 +181,7 @@
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModel\AddToCartViewModel.cs" />
     <Compile Include="ViewModel\BrowseViewModel.cs" />
+    <Compile Include="ViewModel\CartListItemViewModel.cs" />
     <Compile Include="ViewModel\ProductSummaryViewModel.cs" />
   </ItemGroup>
   <ItemGroup>

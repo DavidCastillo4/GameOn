@@ -44,6 +44,7 @@ namespace GameOn.Web
             builder.RegisterType<ProductSummaryViewModel>();
             builder.RegisterType<AddToCartViewModel>();
             builder.RegisterType<CartItem>();
+            builder.RegisterType<CartListItemViewModel>();
 
             // Build the container so we can use it
             var container = builder.Build();

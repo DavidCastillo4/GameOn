@@ -18,14 +18,20 @@ namespace GameOn.Web.Controllers
     {
         const string CartCookieName = "cart";
         readonly CartItem.Factory cartItemFactory;
+        readonly CartListItemViewModel.Factory listItemViewModelFactory;
         readonly IRepository repository;
         readonly AddToCartViewModel.Factory viewModelFactory;
 
-        public CartController(IRepository repository, AddToCartViewModel.Factory viewModelFactory, CartItem.Factory cartItemFactory)
+        public CartController(
+            IRepository repository,
+            AddToCartViewModel.Factory viewModelFactory,
+            CartItem.Factory cartItemFactory,
+            CartListItemViewModel.Factory listItemViewModelFactory)
         {
             this.repository = repository;
             this.viewModelFactory = viewModelFactory;
             this.cartItemFactory = cartItemFactory;
+            this.listItemViewModelFactory = listItemViewModelFactory;
         }
 
         public ActionResult Add(int productId)
@@ -49,7 +55,16 @@ namespace GameOn.Web.Controllers
 
         public ActionResult Index()
         {
-            return View();
+            var cookie = Request.Cookies[CartCookieName] ?? new HttpCookie(CartCookieName);
+            IList<CartItem> items = JsonConvert.DeserializeObject<List<CartItem>>(cookie.Value ?? "[]");
+            IList<CartListItemViewModel> output = new List<CartListItemViewModel>();
+            foreach (var item in items)
+            {
+                var product = repository.Products.FirstOrDefault(p => p.Id == item.ProductId);
+                output.Add(listItemViewModelFactory.Invoke(item.Quantity, product));
+            }
+
+            return View(output);
         }
     }
 }

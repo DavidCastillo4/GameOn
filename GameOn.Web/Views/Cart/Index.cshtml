@@ -1,4 +1,4 @@
-﻿@model dynamic
+﻿@model IList<GameOn.Web.ViewModel.CartListItemViewModel>
 
 @{
     ViewBag.Title = "View Cart";
@@ -6,3 +6,34 @@
 }
 
 <h2>View Cart</h2>
+<table class="table">
+    <thead>
+    <tr>
+        <th>Quantity</th>
+        <th>Item Name</th>
+        <th>Price</th>
+        <th>Subtotal</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Quantity</td>
+            <td>@item.Name</td>
+            <td>@item.Price</td>
+            <td></td>
+        </tr>
+    }
+        <tr>
+            <th>Total:</th>
+            <td></td>
+            <td></td>
+            <th>@Model.Sum(p=>p.Price)</th>
+        </tr>
+    </tbody>
+</table>
+
+
+
+
