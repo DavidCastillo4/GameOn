@@ -15,5 +15,9 @@
         <dd class="col-md-10">
             @Html.DisplayFor(model => model.Price)
         </dd>
+        
+        <dd>
+            @Html.ActionLink("Add to Cart", "Add", "Cart", new{productId=Model.Id}, new{})
+        </dd>
     </dl>
 </div>

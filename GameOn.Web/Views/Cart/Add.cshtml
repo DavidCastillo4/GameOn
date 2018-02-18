@@ -1,4 +1,4 @@
-﻿@model dynamic
+﻿@model GameOn.Web.ViewModel.AddToCartViewModel
 
 @{
     ViewBag.Title = "Add to Cart";
@@ -7,3 +7,16 @@
 
 <h2>Add to Cart</h2>
 <hr/>
+@using (Html.BeginForm())
+{
+    <div class="row">
+        <div class="col-md-4">@Html.LabelFor(p => p.ProductName)</div>
+        <div class="col-md-4">@Html.LabelFor(p => p.Quantity)</div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">@Model.ProductName</div>
+        <div class="col-md-4">@Html.TextBoxFor(p => p.Quantity)</div>
+    </div>
+    @Html.HiddenFor(p => p.ProductId)
+    <input type="submit"/>
+}
