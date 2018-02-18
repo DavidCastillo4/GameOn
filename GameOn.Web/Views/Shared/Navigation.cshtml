@@ -22,7 +22,8 @@
                 @Html.ActionLink("Browse", "Index", "Home", null, new {@class = "nav-link"})
             </li>
             <li class="nav-item">
-                @Html.ActionLink("Cart", "Index", "Cart", null, new {@class = "nav-link"})
+                <a href="/Cart" class="nav-link">Cart
+                    <span id="CartCount"></span></a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">Order History</a>
@@ -33,3 +34,10 @@
         </ul>
     </div>
 </nav>
+
+<script language="javascript" type="text/javascript">
+    $(document).ready(function () {
+        var itemCount = JSON.parse(Cookies('cart')).length;
+        $('#CartCount').text('(' + itemCount + ')');
+    })
+</script>
