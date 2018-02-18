@@ -1,4 +1,11 @@
-﻿/* Bootstrap Overrides */
+﻿/* HTML Element Styles*/
+body, nav {
+    margin: 0px;
+    width: 100%;
+    background-color: #E2E4DC;
+}
+
+/* Bootstrap Overrides */
 .nav li {
     display: inline-block;
 }
@@ -10,6 +17,7 @@ div.logo-text {
     font-size: 40pt;
     font-style: normal;
     font-weight: 900;
+    box-sizing: unset;
 }
 
 div.logo-game {
@@ -37,4 +45,11 @@ div.logo-on {
     padding-left: 5px;
     padding-right: 12px;
     float: left;
+}
+
+.product-summary {
+    border: 1px solid black;
+    border-radius: 15px;
+    margin-bottom: 15px;
+    padding: 15px;
 }

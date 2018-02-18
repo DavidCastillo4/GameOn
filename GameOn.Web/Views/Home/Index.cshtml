@@ -1,5 +1,4 @@
-﻿@using GameOn.Web.ViewModel
-@model BrowseViewModel
+﻿@model GameOn.Web.ViewModel.BrowseViewModel
 
 @{
     ViewBag.Title = "Home";
@@ -7,9 +6,24 @@
 }
 
 <h1>Browse</h1>
-<ul>
-    @foreach (var product in Model.Products)
+
+@{
+    var index = 0;
+}
+@foreach (var item in Model.Products)
+{
+    if (index % 3 == 0)
     {
-        <li>@Html.ActionLink(product.Name, "ProductDetails", new{productId=product.Id})</li>
+        @:<div class="row">
     }
-</ul>
+
+    <div class="col-md-4">
+        @Html.DisplayFor(p => Model.Products[index])
+    </div>
+    index++;
+
+    if (index % 3 == 0)
+    {
+        @: </div>
+    }
+}

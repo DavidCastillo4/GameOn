@@ -186,6 +186,7 @@
     <Content Include="Views\Shared\Navigation.cshtml" />
     <Content Include="Views\Home\ProductDetails.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\Product.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\ProductSummaryViewModel.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
