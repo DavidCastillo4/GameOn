@@ -9,9 +9,9 @@ namespace GameOn.Web.ViewModel
 {
     public class CartListItemViewModel
     {
-        readonly Product product;
-
         public delegate CartListItemViewModel Factory(int quantity, Product product);
+
+        readonly Product product;
 
         public CartListItemViewModel(int quantity, Product product)
         {
@@ -21,8 +21,10 @@ namespace GameOn.Web.ViewModel
 
         public string Name => product.Name;
 
+        public double Price => product.Price;
+
         public int Quantity { get; }
 
-        public double Price => product.Price;
+        public double Subtotal => Quantity * Price;
     }
 }

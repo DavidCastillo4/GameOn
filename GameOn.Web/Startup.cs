@@ -9,6 +9,7 @@ using Autofac;
 using Autofac.Integration.Mvc;
 using GameOn.Repository;
 using GameOn.Web;
+using GameOn.Web.Infrastructure;
 using GameOn.Web.Models;
 using GameOn.Web.ViewModel;
 using Microsoft.Owin;
@@ -45,6 +46,8 @@ namespace GameOn.Web
             builder.RegisterType<AddToCartViewModel>();
             builder.RegisterType<CartItem>();
             builder.RegisterType<CartListItemViewModel>();
+            builder.RegisterType<CartViewModel>();
+            builder.RegisterType<CartCalculator>();
 
             // Build the container so we can use it
             var container = builder.Build();

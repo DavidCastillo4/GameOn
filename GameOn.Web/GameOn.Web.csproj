@@ -176,12 +176,14 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\CartController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Infrastructure\CartCalculator.cs" />
     <Compile Include="Models\CartItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModel\AddToCartViewModel.cs" />
     <Compile Include="ViewModel\BrowseViewModel.cs" />
     <Compile Include="ViewModel\CartListItemViewModel.cs" />
+    <Compile Include="ViewModel\CartViewModel.cs" />
     <Compile Include="ViewModel\ProductSummaryViewModel.cs" />
   </ItemGroup>
   <ItemGroup>

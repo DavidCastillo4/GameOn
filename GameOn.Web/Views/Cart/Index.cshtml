@@ -1,4 +1,4 @@
-﻿@model IList<GameOn.Web.ViewModel.CartListItemViewModel>
+﻿@model GameOn.Web.ViewModel.CartViewModel
 
 @{
     ViewBag.Title = "View Cart";
@@ -16,21 +16,38 @@
     </tr>
     </thead>
     <tbody>
-    @foreach (var item in Model)
+    @foreach (var item in Model.Items)
     {
         <tr>
-            <td>@item.Quantity</td>
-            <td>@item.Name</td>
-            <td>@item.Price</td>
-            <td></td>
+            <td class="cart-item">@item.Quantity</td>
+            <td class="cart-item">@item.Name</td>
+            <td class="cart-item">@($"{item.Price:c}")</td>
+            <td class="cart-item">@($"{item.Subtotal:c}")</td>
         </tr>
     }
-        <tr>
-            <th>Total:</th>
-            <td></td>
-            <td></td>
-            <th>@Model.Sum(p=>p.Price)</th>
-        </tr>
+    <tr>
+        <td colspan="4">
+            <hr/>
+        </td>
+    </tr>
+    <tr>
+        <td class="cart-item"></td>
+        <td class="cart-item"></td>
+        <th class="cart-item">Subtotal:</th>
+        <th class="cart-item">@($"{Model.Subtotal:c}")</th>
+    </tr>
+    <tr>
+        <td class="cart-item"></td>
+        <td class="cart-item"></td>
+        <th class="cart-item">Tax</th>
+        <th class="cart-item">@($"{Model.Tax:c}")</th>
+    </tr>
+    <tr>
+        <td class="cart-item"></td>
+        <td class="cart-item"></td>
+        <th class="cart-item">Total:</th>
+        <th class="cart-item">@($"{Model.Total:c}")</th>
+    </tr>
     </tbody>
 </table>
 

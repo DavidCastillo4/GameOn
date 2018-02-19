@@ -8,6 +8,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using GameOn.Repository;
+using GameOn.Web.Infrastructure;
 using GameOn.Web.Models;
 using GameOn.Web.ViewModel;
 using Newtonsoft.Json;
@@ -19,19 +20,25 @@ namespace GameOn.Web.Controllers
         const string CartCookieName = "cart";
         readonly CartItem.Factory cartItemFactory;
         readonly CartListItemViewModel.Factory listItemViewModelFactory;
+        readonly CartViewModel.Factory cartViewModelFactory;
         readonly IRepository repository;
+        readonly CartCalculator cartCalculator;
         readonly AddToCartViewModel.Factory viewModelFactory;
 
         public CartController(
             IRepository repository,
+            CartCalculator cartCalculator,
             AddToCartViewModel.Factory viewModelFactory,
             CartItem.Factory cartItemFactory,
-            CartListItemViewModel.Factory listItemViewModelFactory)
+            CartListItemViewModel.Factory listItemViewModelFactory,
+            CartViewModel.Factory cartViewModelFactory)
         {
             this.repository = repository;
+            this.cartCalculator = cartCalculator;
             this.viewModelFactory = viewModelFactory;
             this.cartItemFactory = cartItemFactory;
             this.listItemViewModelFactory = listItemViewModelFactory;
+            this.cartViewModelFactory = cartViewModelFactory;
         }
 
         public ActionResult Add(int productId)
@@ -64,7 +71,12 @@ namespace GameOn.Web.Controllers
                 output.Add(listItemViewModelFactory.Invoke(item.Quantity, product));
             }
 
-            return View(output);
+            var viewModel = cartViewModelFactory.Invoke();
+            viewModel.Items = output;
+            //viewModel.Subtotal = cartCalculator.CalculateSubtotal(output);
+            //viewModel.Tax = cartCalculator.CalculateTax(output);
+            //viewModel.Total = viewModel.Subtotal + viewModel.Tax;
+            return View(viewModel);
         }
     }
 }
