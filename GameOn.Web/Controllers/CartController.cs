@@ -15,23 +15,19 @@ namespace GameOn.Web.Controllers
     public class CartController : Controller
     {
         const string CartCookieName = "cart";
+        readonly CartRepository cartRepository;
         readonly CartSerializer cartSerializer;
 
-        readonly CartListItemViewModel.Factory listItemViewModelFactory;
         readonly IRepository repository;
 
         readonly AddToCartViewModel.Factory viewModelFactory;
 
-        public CartController(
-            IRepository repository,
-            AddToCartViewModel.Factory viewModelFactory,
-            CartListItemViewModel.Factory listItemViewModelFactory,
-            CartSerializer cartSerializer)
+        public CartController(IRepository repository, AddToCartViewModel.Factory viewModelFactory, CartSerializer cartSerializer, CartRepository cartRepository)
         {
             this.repository = repository;
             this.viewModelFactory = viewModelFactory;
-            this.listItemViewModelFactory = listItemViewModelFactory;
             this.cartSerializer = cartSerializer;
+            this.cartRepository = cartRepository;
         }
 
         public ActionResult Add(int productId)
@@ -47,19 +43,7 @@ namespace GameOn.Web.Controllers
             var cookie = Request.Cookies[CartCookieName] ?? new HttpCookie(CartCookieName);
             var cartData = cookie.Value ?? "[]";
             var cart = cartSerializer.Deserialize(cartData);
-
-            var existingItem = cart.Items.FirstOrDefault(p => p.ProductId == viewModel.ProductId);
-            if (existingItem != null)
-            {
-                existingItem.Quantity += viewModel.Quantity;
-            }
-            else
-            {
-                var product = repository.Products.FirstOrDefault(p => p.Id == viewModel.ProductId);
-                var itemViewModel = listItemViewModelFactory.Invoke(viewModel.Quantity, product);
-                cart.Items.Add(itemViewModel);
-            }
-
+            cart = cartRepository.AddItem(cart, viewModel.ProductId, viewModel.Quantity);
             cookie.Value = cartSerializer.Serialize(cart);
             Response.SetCookie(cookie);
             return RedirectToAction("Index", "Home");
