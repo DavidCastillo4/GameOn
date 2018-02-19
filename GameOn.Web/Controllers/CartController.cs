@@ -42,9 +42,7 @@ namespace GameOn.Web.Controllers
         {
             var cookie = Request.Cookies[CartCookieName] ?? new HttpCookie(CartCookieName);
             var cartData = cookie.Value ?? "[]";
-            var cart = cartSerializer.Deserialize(cartData);
-            cart = cartRepository.AddItem(cart, viewModel.ProductId, viewModel.Quantity);
-            cookie.Value = cartSerializer.Serialize(cart);
+            AddItemToCart(viewModel, cartData, cookie);
             Response.SetCookie(cookie);
             return RedirectToAction("Index", "Home");
         }
@@ -56,6 +54,13 @@ namespace GameOn.Web.Controllers
             var viewModel = cartSerializer.Deserialize(cartData);
 
             return View(viewModel);
+        }
+
+        void AddItemToCart(AddToCartViewModel viewModel, string cartData, HttpCookie cookie)
+        {
+            var cart = cartSerializer.Deserialize(cartData);
+            cart = cartRepository.AddItem(cart, viewModel.ProductId, viewModel.Quantity);
+            cookie.Value = cartSerializer.Serialize(cart);
         }
     }
 }
