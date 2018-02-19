@@ -13,6 +13,7 @@
         <th>Item Name</th>
         <th>Price</th>
         <th>Subtotal</th>
+        <td></td>
     </tr>
     </thead>
     <tbody>
@@ -23,10 +24,11 @@
             <td class="cart-item">@item.Name</td>
             <td class="cart-item">@($"{item.Price:c}")</td>
             <td class="cart-item">@($"{item.Subtotal:c}")</td>
+            <td class="cart-item">@Html.ActionLink("Remove", "Remove", new {productId = item.ProductId})</td>
         </tr>
     }
     <tr>
-        <td colspan="4">
+        <td colspan="5">
             <hr/>
         </td>
     </tr>
@@ -35,22 +37,21 @@
         <td class="cart-item"></td>
         <th class="cart-item">Subtotal:</th>
         <th class="cart-item">@($"{Model.Subtotal:c}")</th>
+        <td></td>
     </tr>
     <tr>
         <td class="cart-item"></td>
         <td class="cart-item"></td>
         <th class="cart-item">Tax</th>
         <th class="cart-item">@($"{Model.Tax:c}")</th>
+        <td></td>
     </tr>
     <tr>
         <td class="cart-item"></td>
         <td class="cart-item"></td>
         <th class="cart-item">Total:</th>
         <th class="cart-item">@($"{Model.Total:c}")</th>
+        <td></td>
     </tr>
     </tbody>
 </table>
-
-
-
-

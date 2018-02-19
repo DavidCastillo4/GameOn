@@ -38,6 +38,9 @@
 <script language="javascript" type="text/javascript">
     $(document).ready(function () {
         var itemCount = JSON.parse(Cookies('cart')).length;
-        $('#CartCount').text('(' + itemCount + ')');
+        if (itemCount > 0)
+            $('#CartCount').text('(' + itemCount + ')');
+        else
+            $('#CartCount').text('');
     })
 </script>

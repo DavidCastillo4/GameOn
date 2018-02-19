@@ -35,5 +35,13 @@ namespace GameOn.Web.Infrastructure
             }
             return cart;
         }
+
+        public CartViewModel RemoveItem(CartViewModel cart, int productId)
+        {
+            var item = cart.Items.FirstOrDefault(p => p.ProductId == productId);
+            if (item != null)
+                cart.Items.Remove(item);
+            return cart;
+        }
     }
 }

@@ -56,6 +56,18 @@ namespace GameOn.Web.Controllers
             return View(viewModel);
         }
 
+        public ActionResult Remove(int productId)
+        {
+            var cookie = Request.Cookies[CartCookieName] ?? new HttpCookie(CartCookieName);
+            var cartData = cookie.Value ?? "[]";
+            var cart = cartSerializer.Deserialize(cartData);
+            cart = cartRepository.RemoveItem(cart, productId);
+
+            cookie.Value = cartSerializer.Serialize(cart);
+            Response.SetCookie(cookie);
+            return View("Index", cart);
+        }
+
         void AddItemToCart(AddToCartViewModel viewModel, string cartData, HttpCookie cookie)
         {
             var cart = cartSerializer.Deserialize(cartData);
