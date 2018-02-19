@@ -19,7 +19,7 @@ namespace GameOn.Web.ViewModel
             this.cartCalculator = cartCalculator;
         }
 
-        public IEnumerable<CartListItemViewModel> Items { get; set; }
+        public IList<CartListItemViewModel> Items { get; set; }
 
         public double Subtotal => cartCalculator.CalculateSubtotal(Items);
 

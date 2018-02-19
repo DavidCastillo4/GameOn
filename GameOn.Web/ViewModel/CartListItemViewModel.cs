@@ -23,8 +23,10 @@ namespace GameOn.Web.ViewModel
 
         public double Price => product.Price;
 
-        public int Quantity { get; }
+        public int Quantity { get; set; }
 
         public double Subtotal => Quantity * Price;
+
+        public int ProductId => product.Id;
     }
 }

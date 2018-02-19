@@ -48,6 +48,7 @@ namespace GameOn.Web
             builder.RegisterType<CartListItemViewModel>();
             builder.RegisterType<CartViewModel>();
             builder.RegisterType<CartCalculator>();
+            builder.RegisterType<CartSerializer>();
 
             // Build the container so we can use it
             var container = builder.Build();
